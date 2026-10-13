@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"e:/SolidStateEntitiesInc/Projects/sse-websites/sse-consulting-website/brand_assets\"; echo \"---NODE---\"; node --version 2>&1; echo \"---PUPPETEER nateh---\"; ls \"C:/Users/nateh/.cache/puppeteer/\" 2>&1 | head; echo \"---PUPPETEER digil---\"; ls \"C:/Users/digil/.cache/puppeteer/\" 2>&1 | head; echo \"---temp puppeteer digil---\"; ls \"C:/Users/digil/AppData/Local/Temp/puppeteer-test/\" 2>&1 | head)",
+      "Read(//c/Users/nateh/.cache/**)",
+      "Read(//c/Users/digil/.cache/**)",
+      "Read(//c/Users/digil/AppData/Local/Temp/**)",
+      "Bash(npm install *)",
+      "WebSearch",
+      "PowerShell(Write-Output \"--- direct exe call ---\"; & \"$env:USERPROFILE\\\\.local\\\\bin\\\\claude.exe\" --version; Write-Output \"--- session PATH raw \\(this fresh process\\) ---\"; $env:PATH; Write-Output \"--- does bare dir appear as its own token? ---\"; \\($env:PATH -split ';'\\) -contains \"$env:USERPROFILE\\\\.local\\\\bin\")",
+      "Bash(node screenshot.mjs http://localhost:3000 approach-v1)",
+      "Bash(node _mobile.mjs http://localhost:3000 approach-v1)",
+      "Bash(node screenshot.mjs http://localhost:3000 approach-v2)"
+    ]
+  }
+}
