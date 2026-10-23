@@ -50,7 +50,7 @@ const accentText = { teal: 'text-teal', sky: 'text-sky', grey: 'text-grey', oran
 function shell({ title, description, prefix, main }) {
   const nav = site.nav.map((n) => `<a href="${prefix ? prefix + 'index.html' : ''}${n.href}" class="link-nav">${esc(n.label)}</a>`).join('\n        ');
   const home = prefix ? `${prefix}index.html` : '#top';
-  const logo = (size, text) => `<img src="${prefix}brand_assets/logo.png" alt="Solid State Entity logo" class="h-${size} w-${size} rounded-full object-cover ring-1 ring-white/10" />
+  const logo = (size, text) => `<img src="${prefix}brand_assets/logo.png" alt="Solid State Entity logo" width="46" height="37" class="h-[37px] w-[46px] shrink-0" />
         <span class="display font-bold text-white ${text}">
           ${esc(site.lockup_name)}
           <span class="block mono text-[9px] font-normal tracking-[0.3em] text-teal mt-1">${esc(site.lockup_sub)}</span>
