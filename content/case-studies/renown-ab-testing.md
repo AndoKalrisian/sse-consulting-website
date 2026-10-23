@@ -7,7 +7,7 @@ industry_tag: VIDEO GAMES
 kicker: FIREBASE · A/B TESTING
 accent: grey
 card_summary: Renown made changes to its games without a reliable way to measure them. I set up A/B testing in all five released games.
-cover: https://placehold.co/1600x900/122040/B0B8C8?text=Renown+Entertainment
+cover: /assets/images/case_study_renown.webp
 lead: Renown made changes to its games without a reliable way to know whether they helped. I set up the experimentation foundation across all five released games and helped the team act on the results.
 chips:
   - "CLIENT: RENOWN ENTERTAINMENT"

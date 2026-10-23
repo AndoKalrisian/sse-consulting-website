@@ -7,7 +7,7 @@ industry_tag: TRANSPORTATION
 kicker: BI TOOL · DATA WAREHOUSE · DASHBOARDS
 accent: teal
 card_summary: Leadership had to ask one person for every new visualization. I recommended Power BI, designed a data warehouse, and built 13 reports so they can ask their own questions.
-cover: https://placehold.co/1600x900/122040/18888C?text=Modo+Carshare
+cover: /assets/images/case_study_modo.webp
 lead: Modo's leadership had to ask one person for every new visualization. I recommended a BI tool, designed a data warehouse and built the reports so they can ask deeper questions themselves.
 chips:
   - "CLIENT: MODO CARSHARE"

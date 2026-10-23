@@ -40,7 +40,10 @@ const caseStudies = fs.readdirSync(path.join(root, 'content/case-studies'))
   .map((f) => ({ slug: f.replace(/\.md$/, ''), ...read(`content/case-studies/${f}`) }))
   .sort((a, b) => a.data.order - b.data.order);
 
-const arrow = (s = 16) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
+// "/assets/x.png" is relative to the site root; make it work from any page depth.
+const asset = (p, prefix = '') => (p.startsWith('/') && !p.startsWith('//') ? prefix + p.slice(1) : p);
+
+const arrow =(s = 16) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
 const accentText = { teal: 'text-teal', sky: 'text-sky', grey: 'text-grey', orange: 'text-orange' };
 
 // ---------- shared shell ----------
@@ -49,8 +52,8 @@ function shell({ title, description, prefix, main }) {
   const home = prefix ? `${prefix}index.html` : '#top';
   const logo = (size, text) => `<img src="${prefix}brand_assets/logo.png" alt="Solid State Entity logo" class="h-${size} w-${size} rounded-full object-cover ring-1 ring-white/10" />
         <span class="display font-bold text-white ${text}">
-          SOLID STATE ENTITY
-          <span class="block mono text-[9px] font-normal tracking-[0.35em] text-teal mt-1">DATA CONSULTING</span>
+          ${esc(site.lockup_name)}
+          <span class="block mono text-[9px] font-normal tracking-[0.3em] text-teal mt-1">${esc(site.lockup_sub)}</span>
         </span>`;
   const contactHref = `${prefix ? prefix + 'index.html' : ''}#contact`;
   return `<!DOCTYPE html>
@@ -228,7 +231,7 @@ function work() {
   const cards = caseStudies.map(({ slug, data: c }, i) => `        <article class="card reveal overflow-hidden"${delay(i)}>
           <a href="case-studies/${slug}.html" class="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange rounded-t-[18px]">
             <div class="cover-frame aspect-[4/3]">
-              <img src="${esc(c.cover)}" alt="${esc(c.short_title || c.title)} case study cover" loading="lazy" />
+              <img src="${esc(asset(c.cover))}" alt="${esc(c.short_title || c.title)} case study cover" loading="lazy" />
               <span class="tag mono text-[10px] tracking-[0.18em] text-white/90 px-2.5 py-1 rounded-full" style="background:rgba(10,16,36,0.55); border:1px solid rgba(255,255,255,0.15);">${esc(c.industry_tag)}</span>
             </div>
           </a>
@@ -349,7 +352,10 @@ function about() {
           <p class="eyebrow mb-4">${esc(d.eyebrow)}</p>
           <h2 class="display text-white font-bold text-4xl lg:text-5xl h-xl">
             ${esc(d.headline)} <span class="text-teal">${esc(d.accent)}</span>
-          </h2>
+          </h2>${d.photo ? `
+          <figure class="cover-frame mt-10 w-56 h-56 !rounded-3xl ring-1 ring-white/10" style="box-shadow:0 30px 60px -30px rgba(24,136,140,0.45);">
+            <img src="${esc(asset(d.photo))}" alt="${esc(d.photo_alt || '')}" loading="lazy" style="object-position:${esc(d.photo_position || 'center')};" />
+          </figure>` : ''}
         </div>
         <div class="md md-about text-[16px] max-w-2xl">${block(content)}</div>
       </div>
@@ -418,7 +424,7 @@ function caseStudyPage(cs, i) {
 
     <section class="max-w-4xl mx-auto px-6 lg:px-10 py-10">
       <div class="cover-frame aspect-[16/9]">
-        <img src="${esc(c.cover)}" alt="${esc(c.short_title || c.title)} cover image" />
+        <img src="${esc(asset(c.cover, '../'))}" alt="${esc(c.short_title || c.title)} cover image" />
       </div>
     </section>
 

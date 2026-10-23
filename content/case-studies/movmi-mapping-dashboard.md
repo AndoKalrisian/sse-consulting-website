@@ -8,7 +8,7 @@ industry_tag: TRANSPORTATION
 kicker: PLOTLY-DASH · AWS DATA LAKE
 accent: sky
 card_summary: movmi's consultants needed one place to see demand, transit and service boundaries. I built a tool that has supported at least 8 client consultations.
-cover: https://placehold.co/1600x900/122040/3C70BD?text=movmi+Mapping+Dashboard
+cover: /assets/images/case_study_movmi.webp
 lead: movmi's consultants needed to look at all the relevant data in one place instead of piecing it together for each project. I built a mapping dashboard that one team now reuses across many clients.
 chips:
   - "CLIENT: MOVMI AND ITS CLIENTS"

@@ -1,5 +1,5 @@
 ---
-eyebrow: SOLID STATE ENTITY · CONTRACT & FRACTIONAL DATA WORK
+eyebrow: ANDERS BERGMAN · DATA ANALYST & ENGINEER
 headline: Turn messy data into pipelines and dashboards your team can trust.
 cta: Get in touch
 cta2: View case studies

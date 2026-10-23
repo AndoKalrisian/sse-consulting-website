@@ -42,4 +42,4 @@ Each file in `case-studies/` is one page plus one card on the home page.
 
 To add a case study, copy one of the files, change its fields, and build. Nothing else needs editing; the card and page appear on their own.
 
-Use a leading `/` for local images, because the case study pages sit one folder deeper than the home page.
+Start local image paths with `/` (for example `/assets/images/x.png`). The build adjusts them for each page, so they also work when the site is hosted in a repo subfolder. The same applies to `photo:` in `about.md`.
